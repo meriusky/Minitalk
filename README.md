@@ -1,2 +1,2 @@
 # Minitalk
-The purpose of this project is to create a small data exchange program using UNIX signals. using UNIX signals
+The purpose of this project is to create a small data exchange program using UNIX signals.
