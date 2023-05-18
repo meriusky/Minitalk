@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   program2.c                                         :+:      :+:    :+:   */
+/*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 19:57:33 by mehernan          #+#    #+#             */
-/*   Updated: 2023/05/17 19:58:34 by mehernan         ###   ########.fr       */
+/*   Created: 2023/05/17 19:55:26 by mehernan          #+#    #+#             */
+/*   Updated: 2023/05/18 19:58:45 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//File to test if my makefile can compile two programs at the same time
+// this file is just a test to check if my makefile is compilen two files at the same time
 #include <stdio.h>
 int	main(void)
 {
-	printf("program2\n");
+	printf("client is being printed\n");
 }
+

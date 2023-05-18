@@ -1,10 +1,10 @@
-PROGRAM1 = program1
-PROGRAM2 = program2
+PROGRAM1 = client
+PROGRAM2 = server
 
 CC = gcc
 
-SRCS = program1.c
-SRCS2 =program2.c
+SRCS = client.c
+SRCS2 = server.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS2 = $(SRCS2:.c=.o)
@@ -13,13 +13,23 @@ DEPS2 = $(SRCS2:.c=.d)
 
 CFLAGS = -Wall -Werror -Wextra -MMD
 
-all: $(PROGRAM1) $(PROGRAM2)
+# -L es la carpeta donde tiene que buscar las librerias
+# -l es el nombre de la libreria sin lib al principio y .a al final 
+# (ejemplo: si la libreria se llama libft.a, lo que escribes con -l es "-l ft",
+# si la libreria se llama libftprintf.a, lo que escribes con -l es "-l ftprintf")
+LDFLAGS = -L libft -L printf -l ft -l ftprintf
+
+all: 
+	make -C libft
+	$(MAKE) -C printf
+	$(MAKE) $(PROGRAM1) 
+	$(MAKE) $(PROGRAM2)
 
 $(PROGRAM1): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(PROGRAM1)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $(PROGRAM1)
 
 $(PROGRAM2): $(OBJS2)
-	$(CC) $(CFLAGS) $(OBJS2) -o $@
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS2) -o $@
 
 clean:
 	rm -rf $(OBJS)
@@ -28,6 +38,8 @@ clean:
 	rm -rf $(DEPS2)
 
 fclean: clean
+	$(MAKE) -C libft fclean
+	$(MAKE) -C printf fclean
 	rm -rf $(PROGRAM1)
 	rm -rf $(PROGRAM2)
 

@@ -1,0 +1,17 @@
+File to write down some important stuff about the project.
+	1. Is allowed to use libft and (my)ft_printf
+	2. "        " to use uno global variable for each program
+	3. The server must be startes first and have to show it PID
+	4. The server should recivd srings from diferent clients one after the other, without reset
+	5. Is mandtory to use only UNIX signs
+	6. It's just allowed to use tthe signs SIGURS1 and SIGURS2
+What you have to do?
+	1. Create a communication program between client and server
+	2. The server has to be started first and show it PID
+	3. The lient will take
+		3.1 The servers PID
+		3.2 The string that should be send
+	4. The client have to comunicate the string send as a parameter to the server
+	5. The server wil show this string
+	6. The server must show the string fast, SO FATS
+	7. The server should recivd srings from diferent clients one after the other, without reset.
