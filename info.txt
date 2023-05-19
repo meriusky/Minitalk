@@ -8,7 +8,7 @@ File to write down some important stuff about the project.
 What you have to do?
 	1. Create a communication program between client and server
 	2. The server has to be started first and show it PID
-	3. The lient will take
+	3. The client will take
 		3.1 The servers PID
 		3.2 The string that should be send
 	4. The client have to comunicate the string send as a parameter to the server

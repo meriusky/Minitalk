@@ -11,7 +11,7 @@ OBJS2 = $(SRCS2:.c=.o)
 DEPS = $(SRCS:.c=.d)
 DEPS2 = $(SRCS2:.c=.d)
 
-CFLAGS = -Wall -Werror -Wextra -MMD
+CFLAGS = -Wall -Werror -Wextra -MMD -I libft -I printf
 
 # -L es la carpeta donde tiene que buscar las librerias
 # -l es el nombre de la libreria sin lib al principio y .a al final 
