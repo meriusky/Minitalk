@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:57:33 by mehernan          #+#    #+#             */
-/*   Updated: 2023/05/25 16:36:56 by mehernan         ###   ########.fr       */
+/*   Updated: 2023/05/25 19:18:37 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,21 @@ void	print_string(int sign)
 	}
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
 	int	server_pid;
 
+	(void)argv;
+	if (argc > 1)
+	{
+		ft_printf("No arguments allowed\n");
+		return (0);
+	}
 	server_pid = getpid();
 	ft_printf("%d\n", server_pid);
 	signal(SIGUSR1, &print_string);
 	signal(SIGUSR2, &print_string);
 	while (1)
 		;
+	return (0);
 }
