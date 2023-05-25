@@ -6,7 +6,7 @@
 /*   By: mehernan <mehernan@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:57:33 by mehernan          #+#    #+#             */
-/*   Updated: 2023/05/23 18:31:55 by mehernan         ###   ########.fr       */
+/*   Updated: 2023/05/25 16:36:56 by mehernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	print_string(int sign)
 
 int	main(void)
 {
-	int server_pid;
+	int	server_pid;
 
 	server_pid = getpid();
 	ft_printf("%d\n", server_pid);

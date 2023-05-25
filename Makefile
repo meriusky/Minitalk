@@ -11,6 +11,9 @@ OBJS2 = $(SRCS2:.c=.o)
 DEPS = $(SRCS:.c=.d)
 DEPS2 = $(SRCS2:.c=.d)
 
+LIBFT = libft/libft.a
+PRINTF = printf/libftprintf.a
+
 CFLAGS = -Wall -Werror -Wextra -MMD -I libft -I printf
 
 # -L es la carpeta donde tiene que buscar las librerias
@@ -20,16 +23,20 @@ CFLAGS = -Wall -Werror -Wextra -MMD -I libft -I printf
 LDFLAGS = -L libft -L printf -l ft -l ftprintf
 
 all: 
-	make -C libft
-	$(MAKE) -C printf
 	$(MAKE) $(PROGRAM1) 
 	$(MAKE) $(PROGRAM2)
 
-$(PROGRAM1): $(OBJS)
+$(PROGRAM1): $(OBJS) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) -o $(PROGRAM1)
 
-$(PROGRAM2): $(OBJS2)
+$(PROGRAM2): $(OBJS2) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS2) -o $@
+
+$(LIBFT):
+	make -C libft
+
+$(PRINTF):
+	make -C printf
 
 clean:
 	rm -rf $(OBJS)
